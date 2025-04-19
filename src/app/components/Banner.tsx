@@ -1,13 +1,22 @@
 // src/components/Banner.tsx
 export default function Banner() {
     return (
-      <div className="w-full h-64 md:h-96 relative">
+      <div className="relative w-full" style={{ height: '400px', overflow: 'hidden' }}>
         <img
-            src="/octopus-banner.jpg"
-            alt="Octopus underwater"
-            className="w-full h-full object-cover"
+          src="/octopus-banner.jpg"
+          alt="Octopus underwater"
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: 'center 40%', // 👈 this is the line that controls the "focus"
+            display: 'block',
+          }}
         />
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div
+          className="absolute inset-0 flex items-center justify-center"
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
+        >
           <h1 className="text-white text-3xl md:text-5xl font-bold">
             Dive into Discovery with Nitrox Nerds
           </h1>
